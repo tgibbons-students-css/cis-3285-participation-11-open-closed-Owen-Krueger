@@ -6,22 +6,11 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InterfaceTrader
+namespace AbstractTrader
 {
-    public class TradeProcessorVersion1 : ITradeProcessor
+    public class TradeProcessorVersion1 : TradeProcessor
     {
-        protected void LogMessage(string message, params object[] args)
-        {
-            Console.WriteLine(message, args);
-            // added for Request 408
-            using (StreamWriter logfile = File.AppendText("log.xml"))
-            {
-                logfile.WriteLine("<log>" + message + "</log>", args);
-            }
-
-        }
-
-        protected IEnumerable<string> ReadTradeData(Stream stream)
+        protected override IEnumerable<string> ReadTradeData(Stream stream)
         {
             LogMessage("INFO: ReadTradeData version 1");
             var tradeData = new List<string>();
@@ -36,7 +25,7 @@ namespace InterfaceTrader
             return tradeData;
         }
 
-        protected IEnumerable<TradeRecord> ParseTrades(IEnumerable<string> tradeData)
+        protected override IEnumerable<TradeRecord> ParseTrades(IEnumerable<string> tradeData)
         {
             LogMessage("INFO: ParseTrades version 1");
             var trades = new List<TradeRecord>();
@@ -73,20 +62,12 @@ namespace InterfaceTrader
             return trade;
         }
 
-        protected void StoreTrades(IEnumerable<TradeRecord> trades)
+        protected override void StoreTrades(IEnumerable<TradeRecord> trades)
         {
             LogMessage("INFO: Simulating database connection in StoreTrades");
             // Not really connecting to database in this sample
             LogMessage("INFO: {0} trades processed", trades.Count());
         }
 
-        public void ProcessTrades(Stream stream)
-        //public void ProcessTrades(string url)
-        {
-            var lines = ReadTradeData(stream);
-            //var lines = ReadURLTradeData(url);
-            var trades = ParseTrades(lines);
-            StoreTrades(trades);
-        }
     }
 }

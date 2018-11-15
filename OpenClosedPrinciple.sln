@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualTrader", "VirtualTrader\VirtualTrader.csproj", "{F850FD91-C460-4B0B-B662-4113C5A6C6A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractTrader", "AbstractTrader\AbstractTrader.csproj", "{6197BEB6-A10C-4D44-A322-6E2684855981}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceTrader", "AbstractTrader\InterfaceTrader.csproj", "{6197BEB6-A10C-4D44-A322-6E2684855981}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {85180447-40F7-4D48-B669-F7A3CF2BD2A0}
 	EndGlobalSection
 EndGlobal
