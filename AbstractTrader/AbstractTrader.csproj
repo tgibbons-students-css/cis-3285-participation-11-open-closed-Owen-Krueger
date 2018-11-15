@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6197BEB6-A10C-4D44-A322-6E2684855981}</ProjectGuid>
+    <ProjectGuid>{00486A59-44ED-4019-A277-606C1145E7F0}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>VirtualTrader</RootNamespace>

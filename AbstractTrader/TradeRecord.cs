@@ -1,4 +1,4 @@
-﻿namespace InterfaceTrader
+﻿namespace AbstractTrader
 {
     public class TradeRecord
     {
